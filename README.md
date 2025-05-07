@@ -29,6 +29,7 @@ I compare it to a LinkNet model which is designed to enhance efficiency and
 residual connections helps reduce information loss also ideal for reduce computational
 requirements.
 
+![image](https://github.com/user-attachments/assets/6f300054-f575-4a66-ba0e-9b05927127ea)
 
 References:
 
