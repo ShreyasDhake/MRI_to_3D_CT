@@ -1,0 +1,33 @@
+1) requirements.txt file has all the dependencies
+
+2) Download dataset
+
+3) Git clone preprocess from SynthRAD2023 and use script batch_preprocess.py within the preprocess directory to wherever you clone the file to extract only pelvis data.  https://github.com/SynthRAD2023/preprocessing
+
+4) After gitcloning junyanz Pix2Pix GitHub  https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
+
+5)Run rename.py to get train and validation dataset
+
+6) Run nift_png.py to convert the dataset to png
+
+7) Run test_creator.py to create a test file
+
+8) cd pytorch-CycleGAN-and-pix2pix into the repository then python -m visdom.server and run python train.py --dataroot "C:/Shreyas/AI courseowkr/png_dataset" --name mri_to_ct_pix2pix --model pix2pix --direction AtoB --gpu_ids -1. Change dataroot to your data directory
+
+9) If training crashes you can continue training from whichever epoch left of by checking the checkpoints folder in the directory you cloned for pix2pix:
+python train.py --dataroot "C:/Shreyas/AI courseowkr/png_dataset" --name mri_to_ct_pix2pix --model pix2pix --direction AtoB --gpu_ids -1 --continue_train --epoch_count 155    
+
+10) Then you can perform testing:
+cd pytorch-CycleGAN-and-pix2pix into the repository then python -m visdom.server and run python test.py.py --dataroot "C:/Shreyas/AI courseowkr/png_dataset" --name mri_to_ct_pix2pix --model pix2pix --direction AtoB --gpu_ids -1. Change dataroot to your data directory
+
+11) metrics.py inside pytorch-CycleGAN-and-pix2pix folder run to obtain the metrics
+
+12) discrimin_mode.py allows you to obtain the model,discrim_train.py to train the LinkNet.
+
+13) test_discrim.py to test
+
+14) discrim_metric.py to obtain metrics for LinkNet
+
+15) 3D_script.py can obtain the 3D metrics and visualisation
+
+You would have to train and test to obtain metrics and visualisations as I cannot submit model paths, checkpoints or generated images.
